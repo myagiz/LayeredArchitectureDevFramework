@@ -1,0 +1,14 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=24eabf95_002D0a9e_002D4522_002Dbe13_002Db87c4e2fcf9a/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Get_all_returns_all_products" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;MSTest::7C8AC3C9-5607-4369-9389-3341E7D91739::.NETFramework,Version=v4.7.2::DevFramework.Northwind.DataAccess.Tests.EntityFrameworkTests.EntityFrameworkTest&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;MSTest::7C8AC3C9-5607-4369-9389-3341E7D91739::.NETFramework,Version=v4.7.2::DevFramework.Northwind.DataAccess.Tests.NHibernateTests.NHibernateTest&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=6d56cd27_002D1beb_002D48b4_002D86a8_002D02fc6c816bd7/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="ProductManagerTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;MSTest::FA85D6A3-FE17-4101-9AB9-917FC4A31195::.NETFramework,Version=v4.7.2::DevFramework.Northwind.Business.Tests.ProductManagerTest&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	
+	</wpf:ResourceDictionary>
