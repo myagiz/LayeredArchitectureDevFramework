@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
+using System.Threading;
 using DevFramework.Core.Aspect.PostSharp.CacheAspects;
 using DevFramework.Core.Aspect.PostSharp.LogAspects;
+using DevFramework.Core.Aspect.PostSharp.PerformanceAspect;
 using DevFramework.Core.Aspect.PostSharp.TransactionAspects;
 using DevFramework.Core.Aspect.PostSharp.ValidationAspects;
 using DevFramework.Core.CrossCuttingCorners.Caching.Microsoft;
@@ -15,6 +17,7 @@ namespace DevFramework.Northwind.Business.Concrete.Managers
     public class ProductManager:IProductService
     {
         private IProductDal _productDal;
+        private IProductService _productServiceImplementation;
 
         public ProductManager(IProductDal productDal)
         {
@@ -22,10 +25,13 @@ namespace DevFramework.Northwind.Business.Concrete.Managers
         }
 
         [CacheAspect(typeof(MemoryCacheManager))]
-        [LogAspect(typeof(DatabaseLogger))]
-        [LogAspect(typeof(FileLogger))]
+        //[LogAspect(typeof(DatabaseLogger))]
+        //[LogAspect(typeof(FileLogger))]
+        
+        [PerformanceCounterAspect(2)]
         public List<Product> GetAll()
         {
+            //Thread.Sleep(3000); !! 3 second sleep
             return _productDal.GetList();
         }
 
@@ -36,8 +42,8 @@ namespace DevFramework.Northwind.Business.Concrete.Managers
 
         //[FluentValidationAspect(typeof(ProductValidatior))] HATA VAR GERİ BAK!
         [CacheRemoveAspect(typeof(MemoryCacheManager))]
-        [LogAspect(typeof(DatabaseLogger))]
-        [LogAspect(typeof(FileLogger))]
+        //[LogAspect(typeof(DatabaseLogger))]
+        //[LogAspect(typeof(FileLogger))]
         public Product Add(Product product)
         {
             return _productDal.Add(product);
@@ -46,6 +52,11 @@ namespace DevFramework.Northwind.Business.Concrete.Managers
         public Product Update(Product product)
         {
             return _productDal.Update(product);
+        }
+
+        public void Delete(Product product)
+        {
+             _productDal.Delete(product);
         }
 
         [TransactionScopeAspect]
